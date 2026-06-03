@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-cc+f%jtd(j%+%u@=3!6&)1vtlle=rg+vez9*cz%+8xwlm99^m9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -118,3 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+CSRF_TRUSTED_ORIGINS = ['https://*.us-south.codeengine.appdomain.cloud', 'http://localhost:8080']
