@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Songs - Python Rockers{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">🎵 Our Songs</h1>
+
+{% if songs %}
+    <div class="row">
+        {% for song in songs %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ song.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ song.artist }}</h6>
+                    <p class="card-text"><small class="text-muted">{{ song.genre }}</small></p>
+                    {% if song.lyrics %}
+                    <button type="button" class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#lyricsModal{{ song.id }}">
+                        View Lyrics
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Lyrics Modal -->
+        {% if song.lyrics %}
+        <div class="modal fade" id="lyricsModal{{ song.id }}" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ song.title }} - Lyrics</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <pre style="white-space: pre-wrap; font-family: inherit;">{{ song.lyrics }}</pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        No songs in the collection yet. Check back soon!
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Python Rockers{% endblock %}
+
+{% block content %}
+<div class="jumbotron-custom text-center">
+    <h1 class="display-4">🎸 {{ band_name }}</h1>
+    <p class="lead">{{ tagline }}</p>
+    <hr class="my-4 bg-light">
+    <p>{{ description }}</p>
+    <a class="btn btn-light btn-lg" href="/songs/" role="button">Explore Our Songs</a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">🎵 Songs</h5>
+                <p class="card-text">Check out our latest tracks and lyrics</p>
+                <a href="/songs/" class="btn btn-primary">View Songs</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">📸 Photos</h5>
+                <p class="card-text">See our band in action</p>
+                <a href="/photos/" class="btn btn-primary">View Photos</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">🎪 Concerts</h5>
+                <p class="card-text">Find our upcoming shows</p>
+                <a href="/concerts/" class="btn btn-primary">View Concerts</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

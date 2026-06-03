@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Concerts - Python Rockers{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">🎪 Upcoming Concerts</h1>
+
+{% if concerts %}
+    <div class="row">
+        {% for concert in concerts %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ concert.concert_name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ concert.event_date }}</h6>
+                    <p class="card-text">{{ concert.venue }}</p>
+                    <p class="card-text">{{ concert.description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        No concerts scheduled yet. Check back soon!
+    </div>
+{% endif %}
+{% endblock %}
