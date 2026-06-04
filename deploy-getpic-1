@@ -1,0 +1,13 @@
+$ ibmcloud ce project current
+Getting project 'pictures-project'...
+OK
+
+Name:         pictures-project
+ID:           crn:v1:bluemix:public:codeengine:us-south:a/1234567890abcdef:pictures-project
+Region:       us-south
+Created:      2026-06-01T14:30:00Z
+Resource ID:  1234567890abcdef1234567890abcdef
+
+$ ibmcloud ce project select --name pictures-project
+Selecting project 'pictures-project'...
+OK

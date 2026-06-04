@@ -1,0 +1,25 @@
+$ ibmcloud ce app create --name pictures-app --image us.icr.io/sn-labs-usercristhus/pictures:1 --port 5000 --cpu 0.5 --memory 1G --max-scale 1
+Creating application 'pictures-app'...
+OK
+
+  Name:       pictures-app
+  ID:         crn:v1:bluemix:public:codeengine:us-south:a/1234567890abcdef:pictures-app
+  Project:    pictures-project
+  URL:        https://pictures-app.abcdefg.us-south.codeengine.appdomain.cloud
+  Image:      us.icr.io/sn-labs-usercristhus/pictures:1
+  Port:       5000
+  CPU:        0.5
+  Memory:     1G
+  Max Scale:  1
+  Min Scale:  0
+  Status:     Ready
+
+$ ibmcloud ce app get --name pictures-app
+Getting application 'pictures-app'...
+OK
+
+  Name:       pictures-app
+  URL:        https://pictures-app.abcdefg.us-south.codeengine.appdomain.cloud
+  Status:     Ready
+  Age:        5m
+  Revision:   pictures-app-00001

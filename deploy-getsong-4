@@ -1,0 +1,15 @@
+$ oc expose svc/songs --port=5001
+route.route.openshift.io/songs exposed
+
+$ oc get routes
+NAME    HOST/PORT                                    PATH   SERVICES   PORT   TERMINATION   WILDCARD
+songs   songs-songs-project.apps.domain.openshift.com         songs      5001                 None
+
+$ curl -X GET -i -w '\n' http://songs-songs-project.apps.domain.openshift.com/health
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 21
+
+{
+  "status": "OK"
+}

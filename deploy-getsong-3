@@ -1,0 +1,24 @@
+$ oc new-app us.icr.io/sn-labs-usercristhus/songs:1 --name=songs -e MONGODB_URI=mongodb://mongo:27017/
+--> Found container image us.icr.io/sn-labs-usercristhus/songs:1 (3 weeks old)
+    Image ID: sha256:c6d144a7079096bf25159b91fdd4dbb8a32d61386bf43f32bb1535b74761942f
+--> Creating resources ...
+    deployment.apps "songs" created
+    service "songs" created
+--> Success
+    Application is not exposed. You can expose it to the outside with:
+    'oc expose service/songs'
+    Run 'oc status' to view your app.
+
+$ oc get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+mongo-7f9c6b5c8d-xksja   1/1     Running   0          5m
+songs-6d8f4b2c3e-ab12c   1/1     Running   0          30s
+
+$ oc logs deployment/songs
+MongoDB not available: connection refused
+Using in-memory storage instead
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
