@@ -1,0 +1,11 @@
+$ kubectl apply -f k8s-manifests/django-deployment.yaml
+deployment.apps/django-deployment created
+service/django-service created
+
+$ kubectl get pods
+NAME                               READY   STATUS    RESTARTS   AGE
+django-deployment-6d8f4b2c3e-abc   1/1     Running   0          2m
+
+$ kubectl get services
+NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+django-service   ClusterIP   10.96.0.1       <none>        8000/TCP   2m

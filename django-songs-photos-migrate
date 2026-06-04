@@ -1,0 +1,5 @@
+$ python manage.py migrate songs_app photos
+Operations to perform:
+  Apply all migrations: songs_app, photos
+Running migrations:
+  No migrations to apply.

@@ -1,0 +1,16 @@
+$ cd ~/projects/Back-end-Development-Capstone
+$ docker build -t django-capstone:1 .
+[+] Building 12.5s (14/14) FINISHED
+ => [internal] load build definition from Dockerfile
+ => [internal] load metadata for docker.io/library/python:3.14-slim
+ => [1/7] FROM docker.io/library/python:3.14-slim
+ => [2/7] WORKDIR /app
+ => [3/7] RUN apt-get update && apt-get install -y gcc && rm -rf /var/lib/apt/lists/*
+ => [4/7] COPY requirements.txt .
+ => [5/7] RUN pip install --no-cache-dir -r requirements.txt
+ => [6/7] COPY . .
+ => [7/7] RUN chmod +x entrypoint.sh && mkdir -p staticfiles
+ => exporting to image
+ => naming to docker.io/library/django-capstone:1
+Successfully built 3abab12e1816
+Successfully tagged django-capstone:1
